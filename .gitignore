@@ -1,32 +1,61 @@
-# --- OS / system files ---
-.DS_Store          # macOS artifact, harmless if present
-Thumbs.db          # Windows artifact
-*.swp              # Vim swap files
-*.swo              # Vim swap files
-*.bak              # Backup files
+# =========================
+# OS / system artifacts
+# =========================
+.DS_Store
+Thumbs.db
 
-# --- Editor / IDE files ---
-.vscode/           # VSCode workspace settings (optional: can keep if you want)
-*.code-workspace   # VSCode workspace files
-*.idea/            # JetBrains IDE files
-*.sublime-*        # Sublime Text configs
+# =========================
+# Editor / IDE temp files
+# =========================
 *.swp
 *.swo
+*~
 *.bak
 
-# --- Logs / runtime ---
+.vscode/
+*.code-workspace
+.idea/
+*.sublime-*
+
+# =========================
+# Logs & runtime files
+# =========================
 *.log
 *.pid
 *.lock
-*.cache
 
-# --- Hyprland / Wayland temp stuff ---
-hypr/hyprland.log   # if you keep logs in your config dir
-waybar/temp/        # if Waybar or modules create temp files
-*.cache             # any cache dirs you may generate
+# =========================
+# Cache (runtime only)
+# =========================
+.cache/
 
-# --- Backup / local copies ---
-*.local             # temp local configs
+# =========================
+# Hyprland / Wayland temp
+# =========================
+hypr/hyprland.log
+waybar/temp/
+
+# =========================
+# Shell & scripting artifacts
+# =========================
+.env
+.env.local
+
+# =========================
+# Embedded / build outputs
+# =========================
+build/
+out/
+dist/
+
+*.elf
+*.bin
+*.hex
+*.map
+*.o
+
+# =========================
+# Backup / local overrides
+# =========================
 *.old
-*~                  # common backup files
-
+*.local
