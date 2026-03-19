@@ -1,14 +1,16 @@
 {
+    "spacing": 18,
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "battery"],
+    "modules-right": ["network", "pulseaudio", "battery"],
     "sway/window": {
         "max-length": 50
     },
     "clock": {
         "interval": 60,
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format-alt": "{:%a, %d. %b  %H:%M}",
+        "tooltip": false 
     },
     "hyprland/workspaces": {
 	"format": "{name}",
@@ -27,8 +29,8 @@
     },
     "pulseaudio": {
     "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "",
+    "format-bluetooth": "{volume}% ",
+    "format-muted": "Muted  󰝟",
     "format-icons": {
         "headphone": "",
         "hands-free": "",
@@ -46,7 +48,8 @@
     "network": {
     "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-wifi": "{essid} {icon}",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"] ,
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
     "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -56,7 +59,11 @@
     "max-length": 50
     },
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}",
         "format-icons": ["", "", "", "", ""]
+    },
+    "states": {
+        "warning": 30,
+        "critica": 15
     }
 }
