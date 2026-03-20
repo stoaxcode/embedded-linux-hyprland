@@ -4,9 +4,32 @@
     "height": 30,
     "spacing": 4,
 
-    "modules-left": ["custom/arch", "hyprland/workspaces", "custom/browser", "custom/fileman", "hyprland/window", "custom/nowplaying"],
-    "modules-center": ["clock"],
-    "modules-right": ["custom/serial", "cpu", "memory", "temperature", "disk", "network", "pulseaudio", "tray"],
+    "modules-left": [
+        "custom/arch", 
+        "hyprland/workspaces", 
+        "custom/browser", 
+        "custom/fileman", 
+        "custom/nowplaying"
+    ],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [
+        "custom/leftend",
+        "custom/serial",
+        "custom/spacer",
+        "cpu", "memory",
+        "custom-spacer",
+        "temperature",
+        "custom/spacer", 
+        "disk",
+        "custom/spacer",
+        "network",
+        "custom/spacer",
+        "pulseaudio",
+        "custom/spacer",
+        "tray",
+        "custom/rightend",
+        "clock"
+    ],
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -57,6 +80,21 @@
 		"max-length": 20,
 		"tooltip": false
 	},
+
+    "custom/spacer": {
+    "format": " ",
+    "tooltip": false
+    },
+
+    "custom/rightend": {
+     "format": "  ",
+     "tooltip": false
+    },
+
+    "custom/leftend": {
+     "format": "  ",
+     "tooltip": false
+    },
 
     "clock": {
         "format": "{:%d-%I:%M}",

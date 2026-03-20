@@ -1,38 +1,38 @@
-/* Gruvbox Color Palette for Waybar */
-/* Usage in style.css: color: @red; background: @bg0; etc. */
+/* ================================================
+   ELECTRONICS & EMBEDDED THEME COLORS
+   Circuit Board / PCB Inspired
+   ================================================ */
 
-@define-color bg0_h   #1d2021;
-@define-color bg0_s   #32302f;
-@define-color bg0     #282828;
-@define-color bg1     #3c3836;
-@define-color bg2     #504945;
-@define-color bg3     #665c54;
-@define-color bg4     #7c6f64;
-@define-color bg      #282828;
+@define-color fg_main #FFFFFF;
+@define-color fg_muted #9AA0AA;
+@define-color bg_main #0E0F14;
+@define-color bg_alt #151720;
+@define-color warn_fg #FF9F00;
+@define-color crit_fg #FF2A1A;
+@define-color window_main rgba(10, 14, 20, 0.95);
+@define-color tooltips_bg rgba(24, 24, 24, 0.92);
+@define-color workspaces_bg rgba(45, 45, 45, 0.3);
+@define-color trayc rgba(10, 14, 20, 0.6);
 
-@define-color fg0     #fbf1c7;
-@define-color fg1     #ebdbb2;
-@define-color fg2     #d5c4a1;
-@define-color fg3     #bdae93;
-@define-color fg4     #a89984;
-@define-color fg      #ebdbb2;
+/* Network - Cyan (PCB Traces) */
+@define-color net_fg #00D9FF;
 
-@define-color gray    #928374;
+/* Volume - Yellow (LED Indicator) */
+@define-color vol_fg #FFE066;
+@define-color vol_fg_muted #E03A3A;
 
-/* Normal Colors */
-@define-color red     #cc241d;
-@define-color green   #98971a;
-@define-color yellow  #d79921;
-@define-color blue    #458588;
-@define-color purple  #b16286;
-@define-color aqua    #689d6a;
-@define-color orange  #d65d0e;
+/* CPU - Blue (Digital Logic) */
+@define-color cpu_fg #89B4FA;
 
-/* Bright Colors */
-@define-color bright-red     #fb4934;
-@define-color bright-green   #b8bb26;
-@define-color bright-yellow  #fabd2f;
-@define-color bright-blue    #83a598;
-@define-color bright-purple  #d3869b;
-@define-color bright-aqua    #8ec07c;
-@define-color bright-orange  #fe8019;
+/* Memory - Purple (IC Chips) */
+@define-color mem_fg #CBA6F7;
+
+/* Disk - Green (Storage) */
+@define-color disk_fg #4DA88B;
+
+/* Temperature - Blue/Orange (Heat Sensor) */
+@define-color temp_cool #4DA6FF;
+@define-color temp_hot #FF6B35;
+
+/* Serial - Green (UART Signal) */
+@define-color serial_fg #00FF41;
