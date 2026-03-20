@@ -1,69 +1,157 @@
 {
-    "spacing": 18,
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+
+    "modules-left": ["custom/arch", "hyprland/workspaces", "custom/browser", "custom/fileman", "hyprland/window", "custom/nowplaying"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio", "battery"],
-    "sway/window": {
-        "max-length": 50
-    },
-    "clock": {
-        "interval": 60,
-        "format-alt": "{:%a, %d. %b  %H:%M}",
-        "tooltip": false 
-    },
+    "modules-right": ["custom/serial", "cpu", "memory", "temperature", "disk", "network", "pulseaudio", "tray"],
+
     "hyprland/workspaces": {
-	"format": "{name}",
-	"format-icons": {
-		"1": "",
-		"2": "",
-		"3": "",
-		"4": "",
-		"5": "",
-		"active": "",
-		"default": ""
+        "format": "{icon}",
+        "sort-by-numbers": true,
+        "on-click": "activate",
+        "format-icons": {
+            "1": "CODE",
+            "2": "FILE",
+            "3": "FLASH",
+            "4": "UART",
+            "5": "DOCS",
+            "6": "SYS"
+        },
+        "persistent-workspaces": {
+            "*": 6
+        }
+    },
+
+    "custom/arch": {
+		"format": "   ",
+		"tooltip": false,
+		"on-click": "~/.config/scripts/left-side-plaunch.sh"
 	},
-       "persistent-workspaces": {
-             "*": 5 // 5 workspaces by default on every monitor
-       }
+
+    "custom/browser": {
+    "format": "",
+    "on-click": "brave",
+    "tooltip": false,
+    "icon-size": 32
     },
-    "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% ",
-    "format-muted": "Muted  󰝟",
-    "format-icons": {
-        "headphone": "",
-        "hands-free": "",
-        "headset": "",
-        "phone": "",
-        "phone-muted": "",
-        "portable": "",
-        "car": "",
-        "default": ["", ""]
+
+    "custom/fileman": {
+    "format": "",
+    "on-click": "thunar",
+    "tooltip": false,
+    "icon-size": 32
     },
-    "scroll-step": 1,
-    "on-click": "pavucontrol",
-    "ignored-sinks": ["Easy Effects Sink"]
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 40,
+        "seperate-outputs": true
     },
-    "network": {
-    "interface": "wlan0",
-    "format": "{ifname}",
-    "format-wifi": "{essid} {icon}",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"] ,
-    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "", //An empty format will hide the module.
-    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
+
+    "custom/nowplaying": {
+		"exec": "playerctl metadata --format '{{title}}' 2>/dev/null | sed -e 's/&/&amp;/g' -e 's/</&lt;/g' -e 's/>/&gt;/g' | awk '{print \"<span rise=\\\"-1500\\\" size=\\\"14000\\\">󰝚</span> \" $0}'",
+		"interval": 2,
+		"max-length": 20,
+		"tooltip": false
+	},
+
+    "clock": {
+        "format": "{:%d-%I:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big><tt>",
+        "actions": {
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down",
+            "on-click": "shift_reset"
+        }
     },
-    "battery": {
-        "format": "{capacity}",
-        "format-icons": ["", "", "", "", ""]
-    },
+
+    "cpu": {
+    "format": "{icon} {usage}",
+    "format-icons": "<span rise='1200' size = '11000'>󰍛</span>",
     "states": {
-        "warning": 30,
-        "critica": 15
+	        "warning": 75,
+	        "critical": 90
+        }
+    },
+
+      "memory": {
+    "format": "<span rise = '1200' size = '11000'>{icon}</span>{percentage}",
+    "tooltip-format": "Memory Used: {used:0.0f}/{total:0.0f} GB",
+    "format-icons": "󰘚 ",
+    "states": {
+	        "warning": 75,
+	        "critical": 90
+        },
+    },
+
+    "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",	  
+    "interval": 2,
+    "warning-threshold": 80,
+    "critical-threshold": 95, 
+    "format": "<span rise = '2000'>{icon} </span>{temperatureC}",
+    "format-warning": "<span rise = '2000'>{icon}</span> {temperatureC}",
+    "format-critical": "<span rise = '2000'>{icon}</span> {temperatureC}",
+    "format-icons": "",
+    "tooltip": false
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "DISK {percentage_used}%",
+        "path": "/"
+    },
+
+    "network": {
+		"format-wifi": "<span rise='1300' size='11000'>{icon}</span> {signalStrength}",
+		"format-ethernet": "<span rise ='2000'> </span>",
+		"format-linked": "{ifname} (No IP)  ",
+		"format-disconnected": "<span rise ='1300' size='12000'>󰤮 </span>",
+		"on-click": "~/.config/waybar/scripts/networkmenu.sh",
+		"format-icons": [
+			"󰤯",
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
+		//"tooltip": false
+		"tooltip-format": "<b>Gateway</b>: {gwaddr}",
+		"tooltip-format-ethernet": "<b>Interface</b>: {ifname}\n<b>IP Addr</b>: {ipaddr}/{cidr}",
+		"tooltip-format-wifi": "<b>Network</b>: {essid}\n<b>IP Addr</b>: {ipaddr}/{cidr}\n<b>Strength</b>: {signalStrength}%\n<b>Frequency</b>: {frequency} GHz",
+		"tooltip-format-disconnected": "Wi-Fi Disconnected",
+		"tooltip-format-disabled": "Wi-Fi Disabled"
+	},
+  
+    "pulseaudio": {
+    "format": "<span rise='2000' size='12000'>{icon} </span>",
+    "format-muted": "<span rise='2000' size='15000'>󰝟</span>",
+    "format-source": "{volume}% ",
+    "format-source-muted": "MUTE",
+    "format-icons": {
+      "hands-free": "",
+      "headset": "",
+      "headphone": "",
+      "phone": "",
+      "portable": "",
+      "default": ["󰕿","󰖀",""] 
+    },
+    "on-click": "pavucontrol",
+    "tooltip-format": "<b>Output Device</b>: {desc}"
+    },
+
+    "custom/serial": {
+        "exec": "ls /dev/ttUSB* /dev/tttACM* 2>/dev/null | wc -l",
+        "format": "UART {}",
+        "interval": 2,
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
     }
 }
