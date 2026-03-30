@@ -41,9 +41,10 @@
     },
 
     "custom/arch": {
-		"format": "   ",
+		"format": "  ",
 		"tooltip": false,
-		"on-click": "~/.config/scripts/left-side-plaunch.sh"
+		"on-click": "~/.config/scripts/left-side-plaunch.sh",
+        "icon-size": 32
 	},
 
     "custom/browser": {
@@ -67,11 +68,10 @@
     },
 
     "custom/nowplaying": {
-		"exec": "playerctl metadata --format '{{title}}' 2>/dev/null | sed -e 's/&/&amp;/g' -e 's/</&lt;/g' -e 's/>/&gt;/g' | awk '{print \"<span rise=\\\"-1500\\\" size=\\\"14000\\\">󰝚</span> \" $0}'",
-		"interval": 2,
-		"max-length": 20,
-		"tooltip": false
-	},
+    "exec": "bash -c 'TITLE=$(playerctl metadata --format \"{{title}}\" 2>/dev/null | sed -e \"s/&/&amp;/g\" -e \"s/</&lt;/g\" -e \"s/>/&gt;/g\"); if [ -z \"$TITLE\" ]; then echo \"<span rise=\\\"-1500\\\" size=\\\"14000\\\">󰝚</span> Nothing Playing\"; else TITLE_PAD=\" $TITLE    \"; LEN=${#TITLE_PAD}; POS=$(( $(date +%s) % LEN )); SCROLL=$(echo \"$TITLE_PAD$TITLE_PAD\" | cut -c$((POS+1))-$((POS+20))); echo \"<span rise=\\\"-1500\\\" size=\\\"14000\\\">󰝚</span> $SCROLL\"; fi'",
+    "interval": 1,
+    "tooltip": false
+    },
 
     "custom/spacer": {
     "format": " ",
@@ -89,13 +89,14 @@
     },
 
     "clock": {
-        "format": "{:%d-%I:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big><tt>",
-        "actions": {
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down",
-            "on-click": "shift_reset"
-        }
+    "format": "{:%d-%H:%M}",  
+    "tooltip-format": "{:%m/%d/%Y}\n<tt>{calendar}</tt>",  
+    "actions": {
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down",
+        "on-click": "shift_reset",  
+        "on-click-date": "shift_toggle_calendar" 
+    }
     },
 
     "cpu": {
