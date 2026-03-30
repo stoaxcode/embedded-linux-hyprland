@@ -13,12 +13,14 @@
 .modules-left,
 .modules-center,
 .modules-right {
-  background-color: #434952;
+  background-color: rgba(10, 14, 20, 0.9);
   border-radius: 6px;
+  border: 1px solid rgba(0, 162, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 162, 255, 0.2);
 }
 
 tooltip {
-  background-color: rgba(10, 14, 20, 0.9);
+  background-color: rgba(10, 14, 20, 0.95);
   border-radius: 4px;
   border: 2px solid #00A2FF;
   padding: 6px 6px;
@@ -31,6 +33,7 @@ tooltip label {
 }
 
 window#waybar {
+  /* background-color: rgba(0, 0, 0, 0.8); */
   border-radius: 0px;
   border-bottom: 0px solid rgba(100, 114, 125, 0.5);
   color: #00D9FF;
@@ -38,15 +41,17 @@ window#waybar {
   transition-duration: .5s;
 }
 
-window#waybar .hidden {
+window#waybar.hidden {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-window#waybar .empty {
+window#waybar.empty {
   background-color: transparent;
 }
 
-
+window#waybar.solo {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 label:focus {
   background-color: #00A2FF;
@@ -61,22 +66,22 @@ label:focus {
 
 #window {
   margin: 0 8px;
-  color: #00D9FF
+  color: #00D9FF;
 }
 
-#workspace button {
+#workspaces button {
   padding: 0 8px;
   margin: 0 2px;
   border-radius: 4px;
   background-color: transparent;
-  color:  rgba(0, 217, 255, 0.5);
+  color: rgba(0, 217, 255, 0.5);
   transition: all 0.3s;
 }
 
 #workspaces button.active {
   border-radius: 4px;
   color: #00D9FF;
-  background-color: rgba(0, 162, 255, 0.6);
+  background-color: rgba(0, 162, 255, 0.15);
   border: 1px solid #00A2FF;
   box-shadow: 0 0 8px rgba(0, 162, 255, 0.6);
 }
@@ -86,7 +91,7 @@ label:focus {
   color: inherit;
 }
 
-#workspaces button:focus,
+#workspaces button:focus, 
 #workspaces button:hover {
   background: rgba(0, 162, 255, 0.1);
   color: #00D9FF;
@@ -108,9 +113,9 @@ label:focus {
 #custom-nowplaying,
 #custom-serial {
   margin: 0 4px;
-  padding: 2px 4px;
+  padding: 4px 8px;
   border-radius: 4px;
-  background-color: rgba(0, 162, 255, 0.8);
+  background-color: rgba(0, 162, 255, 0.08);
   color: #00D9FF;
   border: 1px solid rgba(0, 162, 255, 0.2);
 }
@@ -118,12 +123,18 @@ label:focus {
 #custom-browser,
 #custom-fileman {
   margin: 0 4px;
-  padding: 2px 5px;
-  font-size: 1rem;
+  padding: 4px 9px;
+  font-size: 18px;
   border-radius: 4px;
-  background-color: rgba(0, 162, 255, 0.8);
+  background-color: rgba(0, 162, 255, 0.08);
   color: #00D9FF;
   border: 1px solid rgba(0, 162, 255, 0.2);
+}
+
+#custom-browser:hover,
+#custom-fileman:hover {
+  background-color: rgba(0, 162, 255, 0.15);
+  box-shadow: 0 0 8px rgba(0, 162, 255, 0.5);
 }
 
 /* CUSTOM MODULES */
@@ -136,7 +147,7 @@ label:focus {
 #custom-arch:hover {
   background: rgba(0, 162, 255, 0.2);
   border-radius: 4px;
-  box-shadow: 0 0 4px rgba(0, 162, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
   border: 1px solid #00A2FF;
 }
 
@@ -151,7 +162,7 @@ label:focus {
 #custom-nowplaying {
   color: rgba(0, 217, 255, 0.7);
   font-style: italic;
-  padding: 2px 4px;
+  padding: 4px 8px;
   border-radius: 4px;
 }
 
@@ -217,8 +228,8 @@ label:focus {
 }
 
 #tray {
-  padding-left: 8px;
-  padding-right: 6px;
+  padding-left: 12px;
+  padding-right: 8px;
   background-color: transparent;
   border: none;
 }
@@ -238,7 +249,14 @@ label:focus {
 #clock {
   background-color: rgba(0, 162, 255, 0.1);
   font-size: 0.8rem;
-  padding: 2px 10px;
+  padding: 4px 14px;
+  margin: 0 4px;
+  border-radius: 4px;
+  color: #00FFFF;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: 1px solid rgba(0, 162, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 /* SPACERS & DIVIDERS */
@@ -302,9 +320,9 @@ label:focus {
 }
 
 @keyframes blue-glow {
-  0% {
+  0%{
     box-shadow: 0 0 6px rgba(0, 162, 255, 0.2);
-  }
+  } 
   100% {
     box-shadow: 0 0 6px rgba(0, 162, 255, 0.4);
   }
