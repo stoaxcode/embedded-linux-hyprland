@@ -31,7 +31,6 @@ tooltip label {
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 0px;
   border-bottom: 0px solid rgba(100, 114, 125, 0.5);
   color: #00D9FF;
@@ -47,10 +46,70 @@ window#waybar .empty {
   background-color: transparent;
 }
 
-window#waybar .solo {
-  background-color: rgba(0, 0, 0, 0.8);
-}
+
 
 label:focus {
   background-color: #00A2FF;
+}
+
+/* WORKSPACES */
+
+#workspaces {
+  background-color: transparent;
+  margin: 0 8px;
+}
+
+#window {
+  margin: 0 8px;
+  color: #00D9FF
+}
+
+#workspace button {
+  padding: 0 8px;
+  margin: 0 2px;
+  border-radius: 4px;
+  background-color: transparent;
+  color:  rgba(0, 217, 255, 0.5);
+  transition: all 0.3s;
+}
+
+#workspaces button.active {
+  border-radius: 4px;
+  color: #00D9FF;
+  background-color: rgba(0, 162, 255, 0.6);
+  border: 1px solid #00A2FF;
+  box-shadow: 0 0 8px rgba(0, 162, 255, 0.6);
+}
+
+#workspaces button label {
+  font-size: 0.6rem;
+  color: inherit;
+}
+
+#workspaces button:focus,
+#workspaces button:hover {
+  background: rgba(0, 162, 255, 0.1);
+  color: #00D9FF;
+  box-shadow: 0 0 6px rgba(0, 162, 255, 0.4);
+}
+
+/* MODULE GROUPS */
+
+#battery,
+#disk,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#memory,
+#temperature,
+#cpu,
+#custom-arch,
+#custom-nowplaying,
+#custom-serial {
+  margin: 0 4px;
+  border-radius: 4px;
+  background-color: rgba(0, 162, 255, 0.8);
+  color: #00D9FF;
+  border: 1px solid rgba(0, 162, 255, 0.2);
 }
