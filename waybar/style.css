@@ -154,3 +154,84 @@ label:focus {
 
 /* SERIAL UART MODULE */
 
+#custom-serial {
+  color: #00FFFF;
+  font-weight: bold;
+  background-color: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+}
+
+/* STATUS MODULES */
+
+#temperature,
+#memory,
+#cpu,
+#pulseaudio,
+#network,
+#disk,
+#bluetooth {
+  border-bottom: 2px solid #00A2FF;
+}
+
+#temperature {
+  color: #00D9FF;
+}
+
+#memory,
+#cpu {
+  color: #00D9FF;
+}
+
+#temperature.warning,
+#memory.critical,
+#cpu.critical {
+  color: #FF4444;
+  box-shadow: 0 0 8px rgba(255, 68, 68, 0.5);
+}
+
+#pulseaudio {
+  color: #00D9FF;
+  padding-right: 5px;
+}
+
+#pulseaudio.muted {
+  color: rgba(0, 217, 255, 0.3);
+  padding-right: 5px;
+}
+
+#network {
+  color: #00D9FF;
+}
+
+#network.disconnected {
+  color: #FF4444;
+}
+
+#disk {
+  color: #00D9FF;
+  font-size: 0.8rem;
+}
+
+#tray {
+  padding-left: 12px;
+  padding-right: 8px;
+  background-color: transparent;
+  border: none;
+}
+
+#tray.passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: rgba(255, 68, 68, 0.3);
+  box-shadow: 0 0 8px rgba(255, 68, 68, 0.6);
+}
+
+/* CLOCK */
+
+#clock {
+  background-color: rgba(0, 162, 255, 0.1);
+}
