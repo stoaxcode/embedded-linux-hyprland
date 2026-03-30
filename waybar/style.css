@@ -148,16 +148,14 @@ label:focus {
   margin: 0 2px;
   padding: 0 1rem;
   border-radius: 4px;
-  background-color: rgba(0, 162, 255, 0.08);
   color: #00D9FF;
-  border: 1px solid rgba(0, 162, 255, 0.2);
 }
 
-#custom-browser:hover,
+/* #custom-browser:hover,
 #custom-fileman:hover {
   background-color: rgba(0, 162, 255, 0.15);
   box-shadow: 0 0 8px rgba(0, 162, 255, 0.5);
-}
+} */
 
 /* CUSTOM MODULES - Centered Icons */
 
