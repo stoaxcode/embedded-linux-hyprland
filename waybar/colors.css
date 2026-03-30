@@ -1,38 +1,49 @@
 /* ================================================
-   ELECTRONICS & EMBEDDED THEME COLORS
-   Circuit Board / PCB Inspired
+   JARVIS BLUE THEME - Iron Man Electronics
+   Pure blue tones on black background
    ================================================ */
 
-@define-color fg_main #FFFFFF;
-@define-color fg_muted #9AA0AA;
-@define-color bg_main #0E0F14;
-@define-color bg_alt #151720;
-@define-color warn_fg #FF9F00;
-@define-color crit_fg #FF2A1A;
-@define-color window_main rgba(10, 14, 20, 0.95);
-@define-color tooltips_bg rgba(24, 24, 24, 0.92);
-@define-color workspaces_bg rgba(45, 45, 45, 0.3);
-@define-color trayc rgba(10, 14, 20, 0.6);
+@define-color fg_main #00D9FF;
+@define-color fg_muted #0080B3;
+@define-color bg_main #000000;
+@define-color bg_alt #0A0E14;
+@define-color warn_fg #00FFFF;
+@define-color crit_fg #FF4444;
+@define-color window_main rgba(0, 0, 0, 0.8);
+@define-color tooltips_bg rgba(10, 14, 20, 0.95);
+@define-color workspaces_bg transparent;
+@define-color trayc rgba(0, 162, 255, 0.08);
 
-/* Network - Cyan (PCB Traces) */
+/* Network - Bright Blue */
 @define-color net_fg #00D9FF;
 
-/* Volume - Yellow (LED Indicator) */
-@define-color vol_fg #FFE066;
-@define-color vol_fg_muted #E03A3A;
+/* VPN - Electric Blue */
+@define-color vpn_fg #0080FF;
 
-/* CPU - Blue (Digital Logic) */
-@define-color cpu_fg #89B4FA;
+/* Volume - Cyan Blue */
+@define-color vol_fg #00D9FF;
+@define-color vol_fg_muted #004D66;
 
-/* Memory - Purple (IC Chips) */
-@define-color mem_fg #CBA6F7;
+/* Backlight - Soft Blue */
+@define-color backlight_fg #0099CC;
 
-/* Disk - Green (Storage) */
-@define-color disk_fg #4DA88B;
+/* CPU - Ice Blue */
+@define-color cpu_fg #00D9FF;
 
-/* Temperature - Blue/Orange (Heat Sensor) */
-@define-color temp_cool #4DA6FF;
-@define-color temp_hot #FF6B35;
+/* Memory - Cyan */
+@define-color mem_fg #00FFFF;
 
-/* Serial - Green (UART Signal) */
-@define-color serial_fg #00FF41;
+/* Disk - Steel Blue */
+@define-color disk_fg #00A2FF;
+
+/* Temperature - Cool Blue */
+@define-color temp_cool #00D9FF;
+
+/* Battery - Neon Blue */
+@define-color bat_good #00FFFF;
+@define-color bat_norm #00D9FF;
+
+/* Bluetooth - Electric Blue */
+@define-color bt_connected #0080FF;
+@define-color bt_on #00A2FF;
+@define-color bt_off #004D66;
