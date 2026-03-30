@@ -13,21 +13,13 @@
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
-        "custom/leftend",
         "custom/serial",
-        "custom/spacer",
         "cpu", "memory",
-        "custom-spacer",
         "temperature",
-        "custom/spacer", 
         "disk",
-        "custom/spacer",
         "network",
-        "custom/spacer",
         "pulseaudio",
-        "custom/spacer",
         "tray",
-        "custom/rightend",
         "clock"
     ],
 
@@ -107,7 +99,7 @@
     },
 
     "cpu": {
-    "format": "{icon} {usage}",
+    "format": "<span rise='1200' size='11000'>󰍛</span><span rise='1200'>{usage:>3}%</span>",
     "format-icons": "<span rise='1200' size = '11000'>󰍛</span>",
     "states": {
 	        "warning": 75,
@@ -116,56 +108,48 @@
     },
 
       "memory": {
-    "format": "<span rise = '1200' size = '11000'>{icon}</span>{percentage}",
+    "format": "<span rise='1200' size='11000'>󰘚</span><span rise='1200'>{percentage:>3}%</span>",
     "tooltip-format": "Memory Used: {used:0.0f}/{total:0.0f} GB",
     "format-icons": "󰘚 ",
     "states": {
 	        "warning": 75,
 	        "critical": 90
-        },
+        }
     },
 
-    "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",	  
+   "temperature": {
     "interval": 2,
     "warning-threshold": 80,
-    "critical-threshold": 95, 
-    "format": "<span rise = '2000'>{icon} </span>{temperatureC}",
-    "format-warning": "<span rise = '2000'>{icon}</span> {temperatureC}",
-    "format-critical": "<span rise = '2000'>{icon}</span> {temperatureC}",
-    "format-icons": "",
+    "critical-threshold": 95,
+        "format": "<span rise='1200' size='11000'>{icon}</span><span rise='1200'>{temperatureC:>3}°C</span>",
+    "format-icons": ["","","","",""],
     "tooltip": false
     },
 
     "disk": {
         "interval": 30,
-        "format": "DISK {percentage_used}%",
+            "format": "<span rise='1200' size='11000'>󰋊</span><span rise='1200'>{percentage_used:>3}%</span>",
         "path": "/"
     },
 
     "network": {
-		"format-wifi": "<span rise='1300' size='11000'>{icon}</span> {signalStrength}",
-		"format-ethernet": "<span rise ='2000'> </span>",
-		"format-linked": "{ifname} (No IP)  ",
-		"format-disconnected": "<span rise ='1300' size='12000'>󰤮 </span>",
-		"on-click": "~/.config/waybar/scripts/networkmenu.sh",
-		"format-icons": [
-			"󰤯",
-			"󰤟",
-			"󰤢",
-			"󰤥",
-			"󰤨"
-		],
-		//"tooltip": false
-		"tooltip-format": "<b>Gateway</b>: {gwaddr}",
-		"tooltip-format-ethernet": "<b>Interface</b>: {ifname}\n<b>IP Addr</b>: {ipaddr}/{cidr}",
-		"tooltip-format-wifi": "<b>Network</b>: {essid}\n<b>IP Addr</b>: {ipaddr}/{cidr}\n<b>Strength</b>: {signalStrength}%\n<b>Frequency</b>: {frequency} GHz",
-		"tooltip-format-disconnected": "Wi-Fi Disconnected",
-		"tooltip-format-disabled": "Wi-Fi Disabled"
-	},
+    "format-wifi": "<span rise='1200' size='11000'>{icon}</span><span rise='1200'>{signalStrength:>3}%</span>",
+    "format-ethernet": "<span rise='1200' size='11000'></span>",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "<span rise='1200' size='11000'>󰤮</span>",
+    "on-click": "~/.config/waybar/scripts/networkmenu.sh",
+    "format-icons": [
+        "󰤯","󰤟","󰤢","󰤥","󰤨"
+    ],
+    "tooltip-format": "<b>Gateway</b>: {gwaddr}",
+    "tooltip-format-ethernet": "<b>Interface</b>: {ifname}\n<b>IP Addr</b>: {ipaddr}/{cidr}",
+    "tooltip-format-wifi": "<b>Network</b>: {essid}\n<b>IP Addr</b>: {ipaddr}/{cidr}\n<b>Strength</b>: {signalStrength}%\n<b>Frequency</b>: {frequency} GHz",
+    "tooltip-format-disconnected": "Wi-Fi Disconnected",
+    "tooltip-format-disabled": "Wi-Fi Disabled"
+    },
   
     "pulseaudio": {
-    "format": "<span rise='2000' size='12000'>{icon} </span>",
+    "format": "<span rise='2000' size='12000'>{icon}</span>",
     "format-muted": "<span rise='2000' size='15000'>󰝟</span>",
     "format-source": "{volume}% ",
     "format-source-muted": "MUTE",
@@ -175,14 +159,14 @@
       "headphone": "",
       "phone": "",
       "portable": "",
-      "default": ["󰕿","󰖀",""] 
+      "default": ["░","▒","▓","█"]
     },
     "on-click": "pavucontrol",
     "tooltip-format": "<b>Output Device</b>: {desc}"
     },
 
     "custom/serial": {
-        "exec": "ls /dev/ttUSB* /dev/tttACM* 2>/dev/null | wc -l",
+        "exec": "/dev/ttUSB* /dev/tttACM* 2>/dev/null | wc -l",
         "format": "UART {}",
         "interval": 2,
         "tooltip": false

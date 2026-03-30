@@ -10,6 +10,8 @@
   min-height: 0;
 }
 
+/* MODULE SECTIONS */
+
 .modules-left,
 .modules-center,
 .modules-right {
@@ -17,6 +19,21 @@
   border-radius: 6px;
   border: 1px solid rgba(0, 162, 255, 0.3);
   box-shadow: 0 0 10px rgba(0, 162, 255, 0.2);
+  padding: 2px 4px; 
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-center {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.modules-right {
+  margin-right: 8px;
+  padding: 2px 8px;
 }
 
 tooltip {
@@ -57,11 +74,11 @@ label:focus {
   background-color: #00A2FF;
 }
 
-/* WORKSPACES */
+/* WORKSPACES - Centered */
 
 #workspaces {
   background-color: transparent;
-  margin: 0 8px;
+  margin: 0 4px;
 }
 
 #window {
@@ -112,8 +129,8 @@ label:focus {
 #custom-arch,
 #custom-nowplaying,
 #custom-serial {
-  margin: 0 4px;
-  padding: 4px 8px;
+  margin: 0 2px;
+  padding: 2px 6px; 
   border-radius: 4px;
   background-color: rgba(0, 162, 255, 0.08);
   color: #00D9FF;
@@ -122,9 +139,9 @@ label:focus {
 
 #custom-browser,
 #custom-fileman {
-  margin: 0 4px;
-  padding: 4px 9px;
-  font-size: 18px;
+  margin: 0 2px;
+  padding: 0 1rem;
+  font-size: 1rem;
   border-radius: 4px;
   background-color: rgba(0, 162, 255, 0.08);
   color: #00D9FF;
@@ -137,7 +154,7 @@ label:focus {
   box-shadow: 0 0 8px rgba(0, 162, 255, 0.5);
 }
 
-/* CUSTOM MODULES */
+/* CUSTOM MODULES - Centered Icons */
 
 #custom-arch {
   color: #00D9FF;
@@ -162,8 +179,16 @@ label:focus {
 #custom-nowplaying {
   color: rgba(0, 217, 255, 0.7);
   font-style: italic;
-  padding: 4px 8px;
+  padding: 2px 6px;
   border-radius: 4px;
+}
+
+#custom-nowplaying:hover {
+  background: rgba(0, 162, 255, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
+  border: 1px solid #00A2FF;
+  color: #00D9FF;
 }
 
 /* SERIAL UART MODULE */
@@ -174,9 +199,11 @@ label:focus {
   background-color: rgba(0, 255, 255, 0.1);
   border: 1px solid rgba(0, 255, 255, 0.3);
   box-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+  margin: 0 2px;
+  padding: 2px 6px;
 }
 
-/* STATUS MODULES */
+/* STATUS MODULES  */
 
 #temperature,
 #memory,
@@ -206,16 +233,16 @@ label:focus {
 
 #pulseaudio {
   color: #00D9FF;
-  padding-right: 5px;
+  padding: 2px 6px;
 }
 
 #pulseaudio.muted {
   color: rgba(0, 217, 255, 0.3);
-  padding-right: 5px;
 }
 
 #network {
   color: #00D9FF;
+  font-size: 0.6rem;
 }
 
 #network.disconnected {
@@ -228,8 +255,7 @@ label:focus {
 }
 
 #tray {
-  padding-left: 12px;
-  padding-right: 8px;
+  padding: 2px 8px;
   background-color: transparent;
   border: none;
 }
@@ -249,8 +275,8 @@ label:focus {
 #clock {
   background-color: rgba(0, 162, 255, 0.1);
   font-size: 0.8rem;
-  padding: 4px 14px;
-  margin: 0 4px;
+  padding: 2px 10px;
+  margin: 0 2px;
   border-radius: 4px;
   color: #00FFFF;
   font-weight: bold;
@@ -259,13 +285,13 @@ label:focus {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
-/* SPACERS & DIVIDERS */
+/* SPACERS & DIVIDERS
 
 #custom-spacer {
   background-color: transparent;
   border: none;
   margin: 0;
-  padding: 0 2px;
+  min-width: 2px;
 }
 
 #custom-leftend,
@@ -273,8 +299,8 @@ label:focus {
   background-color: transparent;
   border: none;
   color: rgba(0, 162, 255, 0.4);
-  margin: 0 4px;
-}
+  margin: 0 2px;
+} */
 
 /* HOVER EFFECTS */
 
@@ -321,10 +347,10 @@ label:focus {
 
 @keyframes blue-glow {
   0%{
-    box-shadow: 0 0 6px rgba(0, 162, 255, 0.2);
+
   } 
   100% {
-    box-shadow: 0 0 6px rgba(0, 162, 255, 0.4);
+    box-shadow: 0 0 6px rgba(0, 162, 255, 0.2);
   }
   50% {
     box-shadow: 0 0 12px rgba(0, 217, 255, 0.6);
