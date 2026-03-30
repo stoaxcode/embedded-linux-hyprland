@@ -113,3 +113,44 @@ label:focus {
   color: #00D9FF;
   border: 1px solid rgba(0, 162, 255, 0.2);
 }
+
+#custom-browser,
+#custom-fileman {
+  margin: 0 4px;
+  font-size: 1rem;
+  border-radius: 4px;
+  background-color: rgba(0, 162, 255, 0.8);
+  color: #00D9FF;
+  border: 1px solid rgba(0, 162, 255, 0.2);
+}
+
+/* CUSTOM MODULES */
+
+#custom-arch {
+  color: #00D9FF;
+  transition: all 600ms ease;
+}
+
+#custom-arch:hover {
+  background: rgba(0, 162, 255, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 162, 255, 0.6);
+  border: 1px solid #00A2FF;
+}
+
+#custom-browser {
+  color: #00D9FF;
+}
+
+#custom-fileman {
+  color: #00D9FF;
+}
+
+#custom-nowplaying {
+  color: rgba(0, 217, 255, 0.7);
+  font-style: italic;
+  border-radius: 4px;
+}
+
+/* SERIAL UART MODULE */
+
