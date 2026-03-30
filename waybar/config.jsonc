@@ -41,11 +41,10 @@
     },
 
     "custom/arch": {
-		"format": "  ",
-		"tooltip": false,
-		"on-click": "~/.config/scripts/left-side-plaunch.sh",
-        "icon-size": 32
-	},
+    "format": "<span size='12000' rise='1200'></span>",
+    "tooltip": false,
+    "on-click": "kitty --class 'ArchPopup' -e bash -c 'echo Welcome to your Arch Terminal!; sleep 1; bash'"
+    },
 
     "custom/browser": {
     "format": "",

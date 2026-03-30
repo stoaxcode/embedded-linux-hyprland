@@ -126,7 +126,6 @@ label:focus {
 #memory,
 #temperature,
 #cpu,
-#custom-arch,
 #custom-nowplaying,
 #custom-serial {
   margin: 0 2px;
@@ -135,6 +134,13 @@ label:focus {
   background-color: rgba(0, 162, 255, 0.08);
   color: #00D9FF;
   border: 1px solid rgba(0, 162, 255, 0.2);
+}
+
+#custom-arch {
+  margin: 0 2px;
+  padding: 2px 6px; 
+  border-radius: 4px;
+  color: #00D9FF;
 }
 
 #custom-browser,
@@ -160,12 +166,11 @@ label:focus {
   transition: all 600ms ease;
 }
 
-#custom-arch:hover {
-  background: rgba(0, 162, 255, 0.2);
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
-  border: 1px solid #00A2FF;
-}
+/* #custom-arch:hover {
+  box-shadow: 0 0 0 15px rgba(0, 217, 255, 0.6);
+  background: none;
+  border: none;
+} */
 
 #custom-browser {
   color: #00D9FF;
