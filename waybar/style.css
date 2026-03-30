@@ -108,6 +108,7 @@ label:focus {
 #custom-nowplaying,
 #custom-serial {
   margin: 0 4px;
+  padding: 2px 4px;
   border-radius: 4px;
   background-color: rgba(0, 162, 255, 0.8);
   color: #00D9FF;
@@ -117,6 +118,7 @@ label:focus {
 #custom-browser,
 #custom-fileman {
   margin: 0 4px;
+  padding: 2px 5px;
   font-size: 1rem;
   border-radius: 4px;
   background-color: rgba(0, 162, 255, 0.8);
@@ -149,6 +151,7 @@ label:focus {
 #custom-nowplaying {
   color: rgba(0, 217, 255, 0.7);
   font-style: italic;
+  padding: 2px 4px;
   border-radius: 4px;
 }
 
@@ -214,8 +217,8 @@ label:focus {
 }
 
 #tray {
-  padding-left: 12px;
-  padding-right: 8px;
+  padding-left: 8px;
+  padding-right: 6px;
   background-color: transparent;
   border: none;
 }
@@ -234,4 +237,78 @@ label:focus {
 
 #clock {
   background-color: rgba(0, 162, 255, 0.1);
+  font-size: 0.8rem;
+  padding: 2px 10px;
+}
+
+/* SPACERS & DIVIDERS */
+
+#custom-spacer {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0 2px;
+}
+
+#custom-leftend,
+#custom-rightend {
+  background-color: transparent;
+  border: none;
+  color: rgba(0, 162, 255, 0.4);
+  margin: 0 4px;
+}
+
+/* HOVER EFFECTS */
+
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#disk:hover {
+  background-color: rgba(0, 162, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+/* ANIMATIONS */
+
+@keyframes blink {
+  to {
+    background-color: transparent;
+    color: #00D9FF;
+  }
+}
+
+#workspaces button.urgent {
+  color: #FF4444;
+  animation: workspace-urgent-pulse 2.5s infinite;
+  font-size: 22px;
+  box-shadow: 0 0 12px rgba(255, 68, 68, 0.8);
+}
+
+@keyframes workspace-urgent-pulse {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(255, 68, 68, 0.8);
+  }
+  50% {
+    opacity: 0.35;
+    box-shadow: 0 0 4px rgba(255, 68, 68, 0.4);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(255, 68, 68, 0.8);
+  }
+}
+
+@keyframes blue-glow {
+  0% {
+    box-shadow: 0 0 6px rgba(0, 162, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(0, 162, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(0, 217, 255, 0.6);
+  }
 }
